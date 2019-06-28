@@ -5,6 +5,8 @@ if [[ $(whoami) == "root" ]]; then
   exit 1
 fi
 
+xcode-select --install
+
 # Set up vim ########################################################################################
 /bin/cp vimrc ~/.vimrc
 /bin/cp -Rf vim ~/.vim
