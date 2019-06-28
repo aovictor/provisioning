@@ -1,7 +1,7 @@
-vim_colors
+Provisioning
 ===============
 
-Colors for vim!
+./install.sh from this directory
 
 
 Setup
