@@ -12,34 +12,43 @@ xcode-select --install
 /bin/cp -Rf vim ~/.vim
 # /bin/cp -Rf bash_profile ~/.bash_profile
 # Install color themes
-git clone https://github.com/dracula/iterm.git ~/git/dracula
+/usr/bin/git clone https://github.com/dracula/iterm.git ~/git/dracula
+
+if [[ -d /usr/local/lib/pkgconfig ]]; then
+    sudo chown -R $(whoami) /usr/local/lib/pkgconfig && echo "/usr/local/lib/pkgconfig permissions set"
+fi
 
 # Install homebrew ###################################################################################
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 /bin/cp brewfile ~/.brewfile
-/usr/local/bin/brew bundle --file ~/.brewfile
+/usr/local/bin/brew bundle
+
+# install atom monokai theme
+/usr/local/bin/apm install atom-monokai
 
 # Install Oh-My-zsh ##################################################################################
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+/bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+/usr/bin/git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 # Install oh-my-zsh fonts
 mkdir ~/git
-git clone https://github.com/Karmenzind/monaco-nerd-fonts.git ~/git/monaco-nerd-fonts
+/usr/bin/git clone https://github.com/Karmenzind/monaco-nerd-fonts.git ~/git/monaco-nerd-fonts
 /bin/cp ~/git/monaco-nerd-fonts/fonts/* /Library/Fonts
 # Install oh-my-zsh configs
 /bin/cp -f zshrc ~/.zshrc
 /bin/cp zshenv ~/.zshenv
+echo "oh-my-zsh installed, safe to open with iterm."/usr/local/bin/nativefier
 
 # Create apps #########################################################################################
 # Install natifier
-git clone https://github.com/jiahaog/nativefier.git ~/git/nativefier
+/usr/bin/git clone https://github.com/jiahaog/nativefier.git ~/git/nativefier
 brew install node
-npm install nativefier -g
+cd ~/git/nativefier
+npm install nativefier -g && echo "nativefier installed"
 # Create gmail
-/git/natifier/nativefier -n "gMail" --internal-urls '.*.google.com.*' 'http://mail.google.com'
-/bin/mv $(find . -name "gMail.app") /Applications/
+/usr/local/bin/nativefier -n "gMail" --internal-urls '.*.google.com.*' 'http://mail.google.com'
+/bin/mv -fv $(find . -name "gMail.app") /Applications/ && echo "gMail.app installed."
 /bin/rm -Rf $(find . -name gMail*)
 # Create gCal
-/git/natifier/nativefier -n "gCal" --internal-urls '.*.google.com.*' 'http://calendar.google.com'
-/bin/mv $(find . -name "gCal.app") /Applications/
+/usr/local/bin/nativefier -n "gCal" --internal-urls '.*.google.com.*' 'http://calendar.google.com'
+/bin/mv -fv $(find . -name "gCal.app") /Applications/ && echo "gCal.app installed."
 /bin/rm -Rf $(find . -name gCal*)

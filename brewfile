@@ -7,7 +7,7 @@ brew 'telnet'
 # Applications
 cask 'atom'
 cask 'iterm2'
-cask 'logitech-myharmony'
+#cask 'logitech-myharmony'
 cask 'mailplane'
 cask 'mysqlworkbench'
 cask "postman"
@@ -26,5 +26,5 @@ mas 'Xcode', id: 497799835
 # App Store
 mas 'Slack', id: 803453959
 mas 'LastPass', id: 926036361
-mas 'Simplenote', id: 289429962
+# mas 'Simplenote', id: 289429962
 mas 'Reeder 3', id: 880001334
