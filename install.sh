@@ -35,7 +35,6 @@ mkdir ~/git
 /bin/cp ~/git/monaco-nerd-fonts/fonts/* /Library/Fonts
 # Install oh-my-zsh configs
 /bin/cp -f zshrc ~/.zshrc
-# /bin/cp zshenv ~/.zshenv
 echo "oh-my-zsh installed, safe to open with iterm."/usr/local/bin/nativefier
 
 # Create apps #########################################################################################

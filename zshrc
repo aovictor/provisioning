@@ -99,8 +99,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # customization
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=('os_icon' 'context' 'dir' 'vcs')
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=('status' 'root_indicator' 'background_jobs' 'time' 'date' 'load' 'ram')
+# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=('os_icon' 'context' 'dir' 'vcs')
+# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=('status' 'root_indicator' 'background_jobs' 'time' 'date' 'load' 'ram')
 
 # pyenv configuration
 export PYENV_ROOT="$HOME/.pyenv"
