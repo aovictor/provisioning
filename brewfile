@@ -24,6 +24,8 @@ cask 'whatsapp'
 mas 'Xcode', id: 497799835
 
 # App Store
+mas "Apple Remote Desktop", id: 409907375
+mas "Microsoft Remote Desktop 10", id: 129520346
 mas 'Slack', id: 803453959
 mas 'LastPass', id: 926036361
 # mas 'Simplenote', id: 289429962
