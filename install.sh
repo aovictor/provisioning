@@ -44,10 +44,10 @@ brew install node
 cd ~/git/nativefier
 npm install nativefier -g && echo "nativefier installed"
 # Create gmail
-/usr/local/bin/nativefier -n "gMail" --internal-urls '.*.google.com.*' 'http://mail.google.com'
-/bin/mv -fv $(find . -name "gMail.app") /Applications/ && echo "gMail.app installed."
+/usr/local/bin/nativefier -n "gSFDC" --internal-urls '.*.google.com.*' 'http://mail.google.com'
+/bin/mv -fv $(find . -name "gSFDC.app") /Applications/ && echo "gSFDC.app installed."
 /bin/rm -Rf $(find . -name gMail*)
 # Create gCal
-/usr/local/bin/nativefier -n "gCal" --internal-urls '.*.google.com.*' 'http://calendar.google.com'
-/bin/mv -fv $(find . -name "gCal.app") /Applications/ && echo "gCal.app installed."
-/bin/rm -Rf $(find . -name gCal*)
+# /usr/local/bin/nativefier -n "gCal" --internal-urls '.*.google.com.*' 'http://calendar.google.com'
+# /bin/mv -fv $(find . -name "gCal.app") /Applications/ && echo "gCal.app installed."
+# /bin/rm -Rf $(find . -name gCal*)
