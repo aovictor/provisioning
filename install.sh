@@ -10,7 +10,7 @@ xcode-select --install
 # Set up vim ########################################################################################
 /bin/cp vimrc ~/.vimrc
 /bin/cp -Rf vim ~/.vim
-# /bin/cp -Rf bash_profile ~/.bash_profile
+
 # Install color themes
 /usr/bin/git clone https://github.com/dracula/iterm.git ~/git/dracula
 
