@@ -3,6 +3,7 @@
 brew 'go'
 brew 'pyenv'
 brew 'telnet'
+brew 'shellcheck'
 
 # Applications
 cask 'atom'
@@ -19,6 +20,7 @@ cask 'vagrant'
 cask 'virtualbox'
 cask "vlc"
 cask 'whatsapp'
+
 
 # Apple stuff
 mas 'Xcode', id: 497799835
