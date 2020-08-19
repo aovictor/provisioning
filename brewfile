@@ -1,9 +1,10 @@
 
 # languages
-brew 'go'
-brew 'pyenv'
+# brew 'go'
+# brew 'pyenv'
 brew 'telnet'
 brew 'shellcheck'
+brew 'asdf'
 
 # Applications
 cask 'atom'
@@ -11,23 +12,23 @@ cask 'iterm2'
 #cask 'logitech-myharmony'
 cask 'mailplane'
 cask 'mysqlworkbench'
-cask "postman"
+cask 'postman'
 cask 'royal-tsx'
 cask 'slack'
 cask 'spotify'
 cask 'suspicious-package'
 cask 'vagrant'
 cask 'virtualbox'
-cask "vlc"
+cask 'vlc'
 cask 'whatsapp'
-
-
+cask 'visual-studio-code'
+cask 'docker'
 # Apple stuff
 mas 'Xcode', id: 497799835
 
 # App Store
-mas "Apple Remote Desktop", id: 409907375
-mas "Microsoft Remote Desktop 10", id: 129520346
+mas 'Apple Remote Desktop', id: 409907375
+mas 'Microsoft Remote Desktop 10', id: 129520346
 mas 'Slack', id: 803453959
 mas 'LastPass', id: 926036361
 # mas 'Simplenote', id: 289429962

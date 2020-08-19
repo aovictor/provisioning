@@ -37,6 +37,12 @@ mkdir ~/git
 /bin/cp -f zshrc ~/.zshrc
 echo "oh-my-zsh installed, safe to open with iterm."/usr/local/bin/nativefier
 
+# Install asdf plugins
+echo -e "\n. $(brew --prefix asdf)/asdf.sh" >> ~/.zshrc
+asdf plugin-add golang
+asdf plugin-add ruby
+asdf plugin-add python
+
 # Create apps #########################################################################################
 # Install natifier
 /usr/bin/git clone https://github.com/jiahaog/nativefier.git ~/git/nativefier
@@ -47,7 +53,3 @@ npm install nativefier -g && echo "nativefier installed"
 /usr/local/bin/nativefier -n "gSFDC" --internal-urls '.*.google.com.*' 'http://mail.google.com'
 /bin/mv -fv $(find . -name "gSFDC.app") /Applications/ && echo "gSFDC.app installed."
 /bin/rm -Rf $(find . -name gMail*)
-# Create gCal
-# /usr/local/bin/nativefier -n "gCal" --internal-urls '.*.google.com.*' 'http://calendar.google.com'
-# /bin/mv -fv $(find . -name "gCal.app") /Applications/ && echo "gCal.app installed."
-# /bin/rm -Rf $(find . -name gCal*)

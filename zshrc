@@ -70,6 +70,14 @@ HIST_STAMPS="mm/dd/yyyy"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
+# brew completion 
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -100,20 +108,5 @@ source $ZSH/oh-my-zsh.sh
 
 # POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=('os_icon' 'context' 'dir' 'vcs')
 # POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=('status' 'root_indicator' 'background_jobs' 'time' 'date' 'load' 'ram')
-
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-
-export PATH="/Users/username/.pyenv:$PATH"
-eval "$(pyenv init -)"
-
-# append completions to fpath
-fpath=(${ASDF_DIR}/completions $fpath)
-# initialise completions with ZSH's compinit
-autoload -Uz compinit
-compinit
-
-. $HOME/.asdf/asdf.sh
-# . $HOME/.asdf/completions/asdf.bash
 
 export EDITOR='code --wait'
