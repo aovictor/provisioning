@@ -42,7 +42,7 @@ echo -e "\n. $(brew --prefix asdf)/asdf.sh" >> ~/.zshrc
 asdf plugin-add golang
 asdf plugin-add ruby
 asdf plugin-add python
-asdf plugin-add  terraform
+asdf plugin-add terraform
 
 # Create apps #########################################################################################
 # Install natifier
