@@ -5,6 +5,7 @@
 brew 'telnet'
 brew 'shellcheck'
 brew 'asdf'
+brew 'rg'
 
 # Applications
 cask 'atom'
@@ -23,8 +24,9 @@ cask 'vlc'
 cask 'whatsapp'
 cask 'visual-studio-code'
 cask 'docker'
+cask 'awscli'
 # Apple stuff
-mas 'Xcode', id: 497799835
+# mas 'Xcode', id: 497799835
 
 # App Store
 mas 'Apple Remote Desktop', id: 409907375
@@ -32,4 +34,4 @@ mas 'Microsoft Remote Desktop 10', id: 129520346
 mas 'Slack', id: 803453959
 mas 'LastPass', id: 926036361
 # mas 'Simplenote', id: 289429962
-mas 'Reeder 3', id: 880001334
+# mas 'Reeder 3', id: 880001334
