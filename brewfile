@@ -6,6 +6,7 @@ brew 'telnet'
 brew 'shellcheck'
 brew 'asdf'
 brew 'rg'
+brew 'poetry'
 
 # Applications
 cask 'atom'
@@ -27,6 +28,7 @@ cask 'docker'
 cask 'awscli'
 # Apple stuff
 # mas 'Xcode', id: 497799835
+cask 'kubectl'
 
 # App Store
 mas 'Apple Remote Desktop', id: 409907375

@@ -110,3 +110,9 @@ source $ZSH/oh-my-zsh.sh
 # POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=('status' 'root_indicator' 'background_jobs' 'time' 'date' 'load' 'ram')
 
 export EDITOR='code --wait'
+
+export PATH="$HOME/.poetry/bin:$PATH"
+
+source <(kubectl completion zsh)
+alias k=kubectl
+complete -F __start_kubectl k
