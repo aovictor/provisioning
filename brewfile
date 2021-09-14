@@ -13,22 +13,25 @@ cask 'atom'
 cask 'iterm2'
 #cask 'logitech-myharmony'
 cask 'mailplane'
-cask 'mysqlworkbench'
+# cask 'mysqlworkbench'
 cask 'postman'
-cask 'royal-tsx'
+# cask 'royal-tsx'
 cask 'slack'
 cask 'spotify'
 cask 'suspicious-package'
-cask 'vagrant'
-cask 'virtualbox'
+# cask 'vagrant'
+# cask 'virtualbox'
 cask 'vlc'
 cask 'whatsapp'
 cask 'visual-studio-code'
 cask 'docker'
-cask 'awscli'
+cask 'signal'
+cask 'discord'
 # Apple stuff
 # mas 'Xcode', id: 497799835
-cask 'kubectl'
+# cask 'kubectl'
+# cask 'awscli'
+
 
 # App Store
 mas 'Apple Remote Desktop', id: 409907375
