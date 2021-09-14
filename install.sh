@@ -35,7 +35,7 @@ mkdir ~/git
 /bin/cp ~/git/monaco-nerd-fonts/fonts/* /Library/Fonts
 # Install oh-my-zsh configs
 /bin/cp -f zshrc ~/.zshrc
-echo "oh-my-zsh installed, safe to open with iterm."/usr/local/bin/nativefier
+echo "oh-my-zsh installed, safe to open with iterm."
 
 # Install asdf plugins
 echo -e "\n. $(brew --prefix asdf)/asdf.sh" >> ~/.zshrc
@@ -51,6 +51,6 @@ brew install node
 cd ~/git/nativefier
 npm install nativefier -g && echo "nativefier installed"
 # Create gmail
-/usr/local/bin/nativefier -n "gSFDC" --internal-urls '.*.google.com.*' 'http://mail.google.com'
-/bin/mv -fv $(find . -name "gSFDC.app") /Applications/ && echo "gSFDC.app installed."
+/usr/local/bin/nativefier -n "gMail" --internal-urls '.*.google.com.*' 'http://mail.google.com'
+/bin/mv -fv $(find . -name "gMail.app") /Applications/ && echo "gMail.app installed."
 /bin/rm -Rf $(find . -name gMail*)
