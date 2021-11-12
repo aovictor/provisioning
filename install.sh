@@ -20,8 +20,24 @@ fi
 
 # Install homebrew ###################################################################################
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+case "$(uname -m)" in
+"arm64")
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+  brew_bin="/opt/homebrew/bin/brew"
+  ;;
+"x86_64")
+  echo "intel"
+  brew_bin="/usr/local/bin/brew"
+  ;;
+*)
+  echo "error"
+  ;;
+esac
+
 /bin/cp brewfile ~/.brewfile
-/usr/local/bin/brew bundle
+"${brew_bin}" bundle
 
 # install atom monokai theme
 /usr/local/bin/apm install atom-monokai
