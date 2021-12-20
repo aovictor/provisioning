@@ -70,14 +70,6 @@ HIST_STAMPS="mm/dd/yyyy"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-# brew completion
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-
-  autoload -Uz compinit
-  compinit
-fi
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -115,9 +107,18 @@ export PATH="$HOME/.poetry/bin:$PATH"
 
 # source <(kubectl completion zsh)
 # alias k=kubectl
-# complete -F __start_kubectl
+# complete -F __start_kubectl k
 
-export PATH="/usr/local/sbin:$PATH"
+# brew fix
+eval "$(/opt/homebrew/bin/brew shellenv)"
+# brew completion
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
-export ASDF_DATA_DIR=`brew --prefix asdf`/
-source $ASDF_DATA_DIR/asdf.sh
+  autoload -Uz compinit
+  compinit
+fi
+
+
+# asdf fix
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
