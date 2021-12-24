@@ -37,7 +37,7 @@ case "$(uname -m)" in
 esac
 
 /bin/cp brewfile ~/.brewfile
-"${brew_bin}" bundle
+"${brew_bin}" bundle install --file=~/.brewfile
 
 # install atom monokai theme
 /usr/local/bin/apm install atom-monokai
