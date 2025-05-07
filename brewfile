@@ -14,7 +14,8 @@ brew 'gifski'
 
 # Applications
 cask 'atom'
-cask 'iterm2'
+# cask 'iterm2'
+cask 'ghostty'
 #cask 'logitech-myharmony'
 cask 'mailplane'
 # cask 'mysqlworkbench'
