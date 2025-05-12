@@ -13,15 +13,15 @@ brew 'ffmpeg'
 brew 'gifski'
 
 # Applications
-cask 'atom'
-# cask 'iterm2'
+# cask 'atom'
+cask 'iterm2'
 cask 'ghostty'
 #cask 'logitech-myharmony'
 cask 'mailplane'
 # cask 'mysqlworkbench'
 cask 'postman'
 # cask 'royal-tsx'
-cask 'slack'
+# cask 'slack'
 cask 'spotify'
 cask 'suspicious-package'
 # cask 'vagrant'
@@ -41,7 +41,7 @@ cask 'discord'
 # App Store
 mas 'Apple Remote Desktop', id: 409907375
 mas 'Microsoft Remote Desktop 10', id: 129520346
-mas 'Slack', id: 803453959
-mas 'LastPass', id: 926036361
+# mas 'Slack', id: 803453959
+# mas 'LastPass', id: 926036361
 # mas 'Simplenote', id: 289429962
 # mas 'Reeder 3', id: 880001334

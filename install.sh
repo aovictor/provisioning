@@ -19,46 +19,26 @@ if [[ -d /usr/local/lib/pkgconfig ]]; then
 fi
 
 # Install homebrew ###################################################################################
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-case "$(uname -m)" in
-"arm64")
-  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-  brew_bin="/opt/homebrew/bin/brew"
-  ;;
-"x86_64")
-  echo "intel"
-  brew_bin="/usr/local/bin/brew"
-  ;;
-*)
-  echo "error"
-  ;;
-esac
-
+//bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 /bin/cp brewfile ~/.brewfile
-"${brew_bin}" bundle install --file=~/.brewfile
+/bin/cp -f zshrc ~/.zshrc
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
+eval "$(/opt/homebrew/bin/brew shellenv)"
+brew bundle
 
 # install atom monokai theme
 /usr/local/bin/apm install atom-monokai
 
-# # Install Oh-My-zsh ##################################################################################
+# Install Oh-My-zsh ##################################################################################
 /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
+/usr/bin/git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 # Install oh-my-zsh fonts
-curl -o ~/Library/Fonts/MesloLGS\ NF\ Regular.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
-
+mkdir ~/git
+/usr/bin/git clone https://github.com/Karmenzind/monaco-nerd-fonts.git ~/git/monaco-nerd-fonts
+/bin/cp ~/git/monaco-nerd-fonts/fonts/* /Library/Fonts
 # Install oh-my-zsh configs
 /bin/cp -f zshrc ~/.zshrc
 echo "oh-my-zsh installed, safe to open with iterm."
-
-# Install ghostty themes ###############################################################################
-git clone https://github.com/catppuccin/ghostty.git ~/git/ghostty
-mkdir -p ~/.config/ghostty/themes
-/bin/cp -Rf ghostty/themes/* ~/.config/ghostty/themes
-/bin/cp ghostty/ghostty_config ~/.config/ghostty/config
-
 
 # Install asdf plugins
 echo -e "\n. $(brew --prefix asdf)/asdf.sh" >> ~/.zshrc
@@ -67,13 +47,13 @@ asdf plugin-add ruby
 asdf plugin-add python
 asdf plugin-add terraform
 
-# # Create apps #########################################################################################
-# # Install natifier
-# /usr/bin/git clone https://github.com/jiahaog/nativefier.git ~/git/nativefier
-# brew install node
-# cd ~/git/nativefier
-# npm install nativefier -g && echo "nativefier installed"
-# # Create gmail
-# /usr/local/bin/nativefier -n "gMail" --internal-urls '.*.google.com.*' 'http://mail.google.com'
-# /bin/mv -fv $(find . -name "gMail.app") /Applications/ && echo "gMail.app installed."
-# /bin/rm -Rf $(find . -name gMail*)
+# Create apps #########################################################################################
+# Install natifier
+/usr/bin/git clone https://github.com/jiahaog/nativefier.git ~/git/nativefier
+brew install node
+cd ~/git/nativefier
+npm install nativefier -g && echo "nativefier installed"
+# Create gmail
+nativefier -n "gMail" --internal-urls '.*.google.com.*' 'http://mail.google.com'
+/bin/mv -fv $(find . -name "gMail.app") /Applications/ && echo "gMail.app installed."
+/bin/rm -Rf $(find . -name gMail*)
