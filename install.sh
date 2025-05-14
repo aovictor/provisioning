@@ -19,25 +19,12 @@ if [[ -d /usr/local/lib/pkgconfig ]]; then
 fi
 
 # Install homebrew ###################################################################################
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-case "$(uname -m)" in
-"arm64")
-  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-  brew_bin="/opt/homebrew/bin/brew"
-  ;;
-"x86_64")
-  echo "intel"
-  brew_bin="/usr/local/bin/brew"
-  ;;
-*)
-  echo "error"
-  ;;
-esac
-
+//bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 /bin/cp brewfile ~/.brewfile
-"${brew_bin}" bundle install --file=~/.brewfile
+/bin/cp -f zshrc ~/.zshrc
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
+eval "$(/opt/homebrew/bin/brew shellenv)"
+brew bundle
 
 # install atom monokai theme
 /usr/local/bin/apm install atom-monokai
@@ -67,6 +54,6 @@ brew install node
 cd ~/git/nativefier
 npm install nativefier -g && echo "nativefier installed"
 # Create gmail
-/usr/local/bin/nativefier -n "gMail" --internal-urls '.*.google.com.*' 'http://mail.google.com'
+nativefier -n "gMail" --internal-urls '.*.google.com.*' 'http://mail.google.com'
 /bin/mv -fv $(find . -name "gMail.app") /Applications/ && echo "gMail.app installed."
 /bin/rm -Rf $(find . -name gMail*)
