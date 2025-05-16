@@ -36,7 +36,7 @@ cask 'discord'
 # mas 'Xcode', id: 497799835
 # cask 'kubectl'
 # cask 'awscli'
-cask '
+cask 'sublime-text'
 
 # App Store
 mas 'Apple Remote Desktop', id: 409907375
