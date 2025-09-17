@@ -2,7 +2,7 @@
 font-size = 12
 font-style = medium
 bold-is-bright = true
-theme = catppuccin-macchiato
+theme = catppuccin-macchiato.conf
 font-family = "MesloLGS NF"
 
 # cursor

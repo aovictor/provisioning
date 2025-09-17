@@ -36,9 +36,16 @@ curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%
 # Install oh-my-zsh configs
 /bin/cp -f zshrc ~/.zshrc
 /bin/cp -f p10k.zsh ~/.p10k.zsh
-mkdir -p ~/.config/ghostty
-/bin/cp ghostty_config ~/.config/ghostty/config
 echo "oh-my-zsh installed"
+
+
+# install ghostty
+git clone https://github.com/catppuccin/ghostty.git
+mkdir -p ~/.config/ghostty/themes
+cp -Rf ghostty/themes ~/.config/ghostty/
+/bin/cp ghostty_config ~/.config/ghostty/config
+
+
 
 # Install asdf plugins
 echo -e "\n. $(brew --prefix asdf)/asdf.sh" >> ~/.zshrc
